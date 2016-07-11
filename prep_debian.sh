@@ -12,8 +12,6 @@ echo '##                                                  ##'
 echo '##    Setup script for new Debian server install    ##'
 echo '##                                                  ##'
 echo '######################################################'
-<<<<<<< HEAD
-=======
 
 
 ## INITIALIZE VARIABLES ##
@@ -57,16 +55,9 @@ function installer_selector() {
 			if [ ! -d "/etc/webmin" ]; then
 				echo "Adding Webmin repository"
 				##add webmin repository to APT
-<<<<<<< HEAD
-				$SUDO touch /etc/apt/sources.list.d/webmin.list
-				$SUDO echo '#Webmin repository:' >> /etc/apt/sources.list.d/webmin.list
-				$SUDO echo 'deb http://download.webmin.com/download/repository sarge contrib' >> /etc/apt/sources.list.d/webmin.list
-				$SUDO echo 'deb http://webmin.mirror.somersettechsolutions.co.uk/repository sarge contrib' >> /etc/apt/sources.list.d/webmin.list
-	
-=======
+
 				$SUDO sh -c 'echo "deb http://download.webmin.com/download/repository sarge contrib" > /etc/apt/sources.list.d/webmin.list' 
-				
->>>>>>> webmin
+
 				##download and install apt keys
 				$SUDO wget -qO - http://www.webmin.com/jcameron-key.asc | $SUDO apt-key add -
 	
